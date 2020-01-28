@@ -1,0 +1,31 @@
+# depslib dependency file v1.0
+1579737404 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\bitmap.cpp
+	<fstream>
+	"Bitmap.h"
+	"BitmapInfoHeader.h"
+	"BitmapFileHeader.h"
+
+1579737330 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\bitmap.h
+	<string>
+	<cstdint>
+	<memory>
+
+1580158258 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\bitmapinfoheader.h
+	<cstdint>
+
+1580151221 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\bitmapfileheader.h
+	<cstdint>
+
+1580148893 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\main.cpp
+	<iostream>
+	"Bitmap.h"
+	"RayCast.h"
+
+1580148729 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.h
+	"Bitmap.h"
+
+1580148913 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.cpp
+	<iostream>
+	<math.h>
+	"RayCast.h"
+
