@@ -6,7 +6,11 @@ using namespace std;
 
 
 // Mapa:
-int Map[5][5] = {{1,1,1,1,0},{1,1,1,0,1},{1,1,1,0,1},{1,0,0,1,0},{0,0,0,1,0}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
+int Map[5][5] ={{1,0,1,1,0},
+                {1,0,1,0,1},
+                {1,0,1,1,1},
+                {1,0,0,0,0},
+                {1,0,0,0,0}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
 
 bool check_sector(int x, int y)
 {
@@ -47,7 +51,7 @@ void Set_Vertical(Point *X, int xShift, int move_X, int moveY)
    {
        X->d = fabs(X->d);
        X->h = X->d*sin(X->alfa);
-       X->wx = (X->x-(10*xShift))/10 + move_X - 1;                               // obliczenie wsp X (liczba calkowita). Patrzymy w lewo wiec od 0
+       X->wx = (X->x-(10*xShift))/10 + move_X - 1;                               // obliczenie wsp X (liczba calkowita). Patrzymy w lewo wiec od -1
        X->wy = (X->y+X->h)/10 + moveY;                                 // obliczenie wsp Y
 
    }
@@ -59,17 +63,10 @@ void Set_Horizontal(Point *X, int yShift, int move_X, int moveY)
     X->d = (X->y+(10*yShift))/(sin(X->alfa));                        // obliczenie odleglosci do punktu na osi Y
     X->n = ((X->y+(10*yShift))*cos(X->alfa))/(sin(X->alfa));
 
-    if(1)
-    {
-        X->wx = (X->x+X->n)/10 + move_X;                                     // obliczenie wsp X
-        X->wy = (X->y+(10*yShift))/10+1 + moveY;                                 // obliczenie wsp Y (liczba calkowita.  Patrzymy w prawo wiec + 1, gdy alfa > 90st to - 1 bo patrzymy w lewo i nalezy cofnac sie do lewej krawedzi.
-    }
-    else
-    {
-        X->wx = (X->x-X->n)/10 + move_X;                                     // obliczenie wsp X
-        X->wy = (X->y-(10*yShift))/10 + moveY;
-        X->d = fabs(X->d);
-    }
+    X->wx = (X->x+X->n)/10 + move_X;                                     // obliczenie wsp X
+    X->wy = (X->y+(10*yShift))/10+1 + moveY;                                 // obliczenie wsp Y (liczba calkowita.  Patrzymy w prawo wiec + 1, gdy alfa > 90st to - 1 bo patrzymy w lewo i nalezy cofnac sie do lewej krawedzi.
+
+
 }
 
 void Show_basic_map(int size_x, int size_y)

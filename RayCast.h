@@ -12,12 +12,12 @@
 
 #define Pi 3.141592
 
-#define START 50        // 50
-#define STOP 448        // 448
+#define START 210        // 50
+#define STOP 410        // 448
 #define ANGLE_div 500   // 500 to jest Pi -> 180st
 #define WALL_SIZE 2000  // wysokosc sciany dzielona przez odleglosc
-#define MOVE_X 4
-#define MOVE_Y 0
+#define MOVE_X 1
+#define MOVE_Y 1
 
 
 // Point on the border of sectors:
@@ -32,8 +32,8 @@ public:
     float d = 0;
     float h = 0;    // wysokosc trojkata
     float n = 0;    // podstawa trojkata (odleglosc do najblizszej pionowej)
-    int wx = 0;
-    int wy = 0;
+    uint16_t wx = 0;
+    uint16_t wy = 0;
 
 };
 
