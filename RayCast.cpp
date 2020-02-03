@@ -6,11 +6,11 @@ using namespace std;
 
 
 // Mapa:
-int Map[5][5] ={{1,0,1,1,0},
-                {1,0,1,0,1},
-                {1,0,1,1,1},
+int Map[5][5] ={{1,1,1,1,1},
                 {1,0,0,0,0},
-                {1,0,0,0,0}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
+                {1,0,0,1,0},
+                {1,1,0,0,0},
+                {1,1,1,1,1}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
 
 bool check_sector(int x, int y)
 {
@@ -29,6 +29,7 @@ bool check_sector(int x, int y)
     }
     else
     {
+        //cout << "OutOfRanfe " << endl;
         return false;   // Poza plansza
     }
 
@@ -43,7 +44,7 @@ void Set_Vertical(Point *X, int xShift, int move_X, int moveY)
     if(X->d > 0)
     {
         X->h = X->d*sin(X->alfa);
-        X->wx = (X->x+(10*xShift))/10+1 + move_X;                             // obliczenie wsp X (liczba calkowita). Patrzymy w prawo wiec + 1
+        X->wx = (X->x+(10*xShift))/10 + move_X + 1;                             // obliczenie wsp X (liczba calkowita). Patrzymy w prawo wiec + 1
         X->wy = (X->y+X->h)/10 + moveY;                                 // obliczenie wsp Y
     }
 
@@ -60,12 +61,22 @@ void Set_Vertical(Point *X, int xShift, int move_X, int moveY)
 
 void Set_Horizontal(Point *X, int yShift, int move_X, int moveY)
 {
-    X->d = (X->y+(10*yShift))/(sin(X->alfa));                        // obliczenie odleglosci do punktu na osi Y
-    X->n = ((X->y+(10*yShift))*cos(X->alfa))/(sin(X->alfa));
+    X->d = (X->y+(10*yShift))/(sin(X->alfa));
+    if(X->d > 0)                      // obliczenie odleglosci do punktu na osi Y
+    {
+        X->n = X->d*cos(X->alfa);
 
-    X->wx = (X->x+X->n)/10 + move_X;                                     // obliczenie wsp X
-    X->wy = (X->y+(10*yShift))/10+1 + moveY;                                 // obliczenie wsp Y (liczba calkowita.  Patrzymy w prawo wiec + 1, gdy alfa > 90st to - 1 bo patrzymy w lewo i nalezy cofnac sie do lewej krawedzi.
+        X->wx = (X->x+X->n)/10 + move_X;                                     // obliczenie wsp X
+        X->wy = (X->y+(10*yShift))/10 + moveY + 1;                                 // obliczenie wsp Y (liczba calkowita.  Patrzymy w prawo wiec + 1, gdy alfa > 90st to - 1 bo patrzymy w lewo i nalezy cofnac sie do lewej krawedzi.
+    }
+    else
+    {
+        X->d = fabs(X->d);
+        X->n = X->d*cos(X->alfa);
 
+        X->wx = (X->x+X->n)/10 + move_X;                                     // obliczenie wsp X
+        X->wy = (X->y-(10*yShift))/10 + moveY - 1;
+    }
 
 }
 

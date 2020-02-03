@@ -16,8 +16,8 @@
 #define STOP 410        // 448
 #define ANGLE_div 500   // 500 to jest Pi -> 180st
 #define WALL_SIZE 2000  // wysokosc sciany dzielona przez odleglosc
-#define MOVE_X 1
-#define MOVE_Y 1
+#define MOVE_X 2
+#define MOVE_Y 3
 
 
 // Point on the border of sectors:

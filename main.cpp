@@ -3,6 +3,7 @@
 #include "RayCast.h"
 #include "DisplayWindow.h"
 
+
 using namespace std;
 
 int const WIDTH = 1200;
@@ -97,14 +98,58 @@ int main()
 
     int start = 10;
     int stop = 210;
+    int move_x = 1;
+    int move_y = 1;
 
     while(1)
     {
-        start++;
-        stop++;
-        //if(start>240) break;
+        //start+=4;
+        //stop+=4;
+if (event.type == sf::Event::TextEntered)
+{
+    if (event.text.unicode == 100 && move_x < 4)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        move_x++;
+    }
+
+    if (event.text.unicode == 97 && move_x > 1)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        move_x--;
+    }
+
+    if (event.text.unicode == 119 && move_y < 3)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        move_y++;
+    }
+
+    if (event.text.unicode == 115 && move_y > 0)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        move_y--;
+    }
+
+    if (event.text.unicode == 113)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        start+=10;
+        stop+=10;
+    }
+
+    if (event.text.unicode == 101)
+    {
+        std::cout << "key pressed: " << static_cast<char>(event.text.unicode) << std::endl;
+        start-=10;
+        stop-=10;
+    }
+
+}
 
         Draw_Background(HEIGHT, WIDTH);
+        if(start > 720)
+            cout << "a";
 
      for(int i = start; i <= stop; i++)
      {
@@ -118,8 +163,8 @@ int main()
                 B.alfa = rotationAngle;                  // max < PI/2 -> 90st
           }
 
-                draw_V = Find_Height_Vertical(A, 0,MOVE_X,MOVE_Y) + 1;
-                draw_H = Find_Height_Horizontal(B,0,MOVE_X,MOVE_Y) + 1;
+                draw_V = Find_Height_Vertical(A, 0,move_x,move_y) + 1;
+                draw_H = Find_Height_Horizontal(B,0,move_x,move_y) + 1;
 
                 pom = draw_V - 1;
                 //if(draw_V)
@@ -132,16 +177,17 @@ int main()
                 }
                 else if(A.d < B.d && draw_V != 0)
                 {
+
                     //if(i != 414)
                     draw_vertical_line(WIDTH, HEIGHT, 597-3*(i-start), WALL_SIZE/A.d, 0,0,0);
                     draw_V = 0;
-                    cout << A.wy << "-" << A.wx <<  "V ";
+                    //cout << A.wy << "-" << A.wx <<  "V ";
                 }
                 else if(A.d > B.d && draw_H != 0)
                 {
                     draw_vertical_line(WIDTH, HEIGHT, 597-3*(i-start), WALL_SIZE/B.d, 255,0,0);
                     draw_H = 0;
-                    cout << B.wy << "-" << B.wx <<  "H ";
+                    //cout << B.wy << "-" << B.wx <<  "H ";
                 }
                 else
                 {
