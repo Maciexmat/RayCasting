@@ -95,6 +95,8 @@ void WindowDisp::movement(Event event, int *move_x, int *move_y, int *start, int
 {
     Clock clock;
     Time x;
+    int temp_x = *move_x;
+    int temp_y = *move_y;
 
     if (event.type == Event::TextEntered)
         {
@@ -106,7 +108,7 @@ void WindowDisp::movement(Event event, int *move_x, int *move_y, int *start, int
                 while(x.asMilliseconds() < 200) x = clock.getElapsedTime();
             }
 
-            if (event.text.unicode == 97 && *move_x > 0)
+            if (event.text.unicode == 97 && *move_x > 1)
             {
                 cout << "key pressed: " << static_cast<char>(event.text.unicode) << endl;
                 (*move_x)--;
@@ -122,7 +124,7 @@ void WindowDisp::movement(Event event, int *move_x, int *move_y, int *start, int
                 while(x.asMilliseconds() < 200) x = clock.getElapsedTime();
             }
 
-            if (event.text.unicode == 115 && *move_y > 0)
+            if (event.text.unicode == 115 && *move_y > 1)
             {
                 cout << "key pressed: " << static_cast<char>(event.text.unicode) << endl;
                 (*move_y)--;
@@ -143,6 +145,13 @@ void WindowDisp::movement(Event event, int *move_x, int *move_y, int *start, int
                 (*start)-=10;
                 (*stop)-=10;
             }
+
+            // Sprawdzenie czy nie jestem na niedozwolonym (zajetym) polu. Jezeli tak to cofnij krok.
+            if(check_sector(*move_x, *move_y))
+           {
+               *move_x = temp_x;
+               *move_y = temp_y;
+           }
 
         }
 

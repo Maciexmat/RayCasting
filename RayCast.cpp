@@ -36,7 +36,7 @@ bool check_sector(int x, int y)
 
 }
 
-void Set_Vertical(Point *X, int xShift, int move_X, int moveY)
+void Set_Vertical(Point *X, int xShift, float move_X, float moveY)
 {
     X->d = (X->x+(10*xShift))/(cos(X->alfa));                       // dla 90st mam tu dzielenie przez 0
             // dla 90st mam tu dzielenie przez 0
@@ -60,7 +60,7 @@ void Set_Vertical(Point *X, int xShift, int move_X, int moveY)
 
 }
 
-void Set_Horizontal(Point *X, int yShift, int move_X, int moveY)
+void Set_Horizontal(Point *X, int yShift, float move_X, float moveY)
 {
     X->d = (X->y+(10*yShift))/(sin(X->alfa));
     if(X->d > 0)                      // obliczenie odleglosci do punktu na osi Y
@@ -93,7 +93,7 @@ void Show_basic_map(int size_x, int size_y)
 }
 
 
-float Find_Height_Vertical(Point& A, float shift_Y, int moveX, int moveY)
+float Find_Height_Vertical(Point& A, float shift_Y, float moveX, float moveY)
 {
 	Set_Vertical (&A, shift_Y, moveX, moveY);
 
@@ -115,7 +115,7 @@ float Find_Height_Vertical(Point& A, float shift_Y, int moveX, int moveY)
 }
 
 
-float Find_Height_Horizontal(Point& B, float shift_X, int moveX, int moveY)
+float Find_Height_Horizontal(Point& B, float shift_X, float moveX, float moveY)
 {
 	Set_Horizontal(&B, shift_X, moveX, moveY);
 

@@ -16,21 +16,21 @@
 1580151221 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\bitmapfileheader.h
 	<cstdint>
 
-1581704665 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\main.cpp
+1581980020 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\main.cpp
 	<iostream>
 	"Bitmap.h"
 	"RayCast.h"
 	"DisplayWindow.h"
 
-1581704643 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.h
+1581980490 c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.h
 	"Bitmap.h"
 
-1581704583 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.cpp
+1581962427 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\raycast.cpp
 	<iostream>
 	<math.h>
 	"RayCast.h"
 
-1581199679 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\dispalywindow.cpp
+1581955921 source:c:\users\maciek\desktop\rx\c++\codeblocks_workspace\eclipsespport_bitmap_4\dispalywindow.cpp
 	"DisplayWindow.h"
 	"RayCast.h"
 

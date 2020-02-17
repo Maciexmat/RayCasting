@@ -18,7 +18,7 @@
 #define WALL_SIZE 2000  // wysokosc sciany dzielona przez odleglosc
 #define MAP_SIZE 7      // Mapa 5x5
 
-int const WIDTH = 1200;
+int const WIDTH = 600;
 int const HEIGHT = 600;
 
 
@@ -35,8 +35,8 @@ public:
     float d = 0;
     float h = 0;    // wysokosc trojkata
     float n = 0;    // podstawa trojkata (odleglosc do najblizszej pionowej)
-    uint16_t wx = 0;
-    uint16_t wy = 0;
+    float wx = 0;
+    float wy = 0;
 
 };
 
@@ -46,8 +46,8 @@ bool check_sector(int x, int y);
 void Set_Vertical(Point *X, int xShift, int move_X, int moveY);                         // ustawienie pionowej ...
 void Set_Horizontal(Point *X, int yShift, int move_X, int moveY);                       // ustawienie poziomej ...
 void Show_basic_map(int size_x, int size_y);
-float Find_Height_Vertical(Point& A, float shift_Y, int moveX, int moveY);
-float Find_Height_Horizontal(Point& B, float shift_X, int moveX, int moveY);
+float Find_Height_Vertical(Point& A, float shift_Y, float moveX, float moveY);
+float Find_Height_Horizontal(Point& B, float shift_X, float moveX, float moveY);
 
 
 
