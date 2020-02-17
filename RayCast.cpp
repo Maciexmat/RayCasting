@@ -6,19 +6,21 @@ using namespace std;
 
 
 // Mapa:
-int Map[5][5] ={{1,1,1,1,1},
-                {1,0,0,0,0},
-                {1,0,0,1,0},
-                {1,1,0,0,0},
-                {1,1,1,1,1}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
+int Map[MAP_SIZE][MAP_SIZE]={{1,1,1,0,0,0,0},
+                             {1,1,0,0,0,0,0},
+                             {1,0,0,1,0,1,1},
+                             {1,0,0,0,0,1,1},
+                             {1,0,0,0,0,0,0},
+                             {1,1,0,1,0,0,0},
+                             {1,1,1,1,1,1,1}}; // Kazde pole ma 10 jednostek x i 10 jednostek y
 
 bool check_sector(int x, int y)
 {
-    if( x >= 0 && x <= 4 && y >= 0 && y <= 4 )
+    if( x >= 0 && x <= MAP_SIZE-1 && y >= 0 && y <= MAP_SIZE-1 )
     {
         bool set_p = false;
 
-        set_p = Map[4-y][x];
+        set_p = Map[MAP_SIZE-1-y][x];
         if(set_p)
         {
             //cout << "[" << 4-y << "]" << "["<< x << "]" << ". ";
@@ -29,8 +31,7 @@ bool check_sector(int x, int y)
     }
     else
     {
-        //cout << "OutOfRanfe " << endl;
-        return false;   // Poza plansza
+        return true;   // Poza mapa
     }
 
 }
@@ -96,14 +97,14 @@ float Find_Height_Vertical(Point& A, float shift_Y, int moveX, int moveY)
 {
 	Set_Vertical (&A, shift_Y, moveX, moveY);
 
-	if((check_sector(A.wx, A.wy) || A.wx < 0 || A.wx > 4) && A.wy < 5 && A.wy >=0) // usunalem warunek  || A.wx == 0 sygnalizujacy koniec mapy z lewej krawedzi, zamienilem na <0
+	if((check_sector(A.wx, A.wy) || A.wx <= 0 || A.wx > MAP_SIZE-1) && A.wy < MAP_SIZE && A.wy >=0)
 	{
 		return shift_Y;		// Daje pozwolenie na rysowanie verticalnej w tym sektorze.
 	}
 	else
 	{
 		shift_Y++;
-		if(shift_Y >4){
+		if(shift_Y >MAP_SIZE-1){
             return shift_Y;       // Daje pozwolenie na rysowanie verticalnej w tym sektorze bo to koniec mapy.
 		};
 
@@ -118,14 +119,14 @@ float Find_Height_Horizontal(Point& B, float shift_X, int moveX, int moveY)
 {
 	Set_Horizontal(&B, shift_X, moveX, moveY);
 
-	if((check_sector(B.wx, B.wy) || B.wy == 0) && B.wx < 5)
+	if((check_sector(B.wx, B.wy) || B.wy <= 0 || B.wy > MAP_SIZE-1) && B.wx < MAP_SIZE && B.wx >=0)
 	{
 		return shift_X;		// Daje pozwolenie na rysowanie verticalnej w tym sektorze.
 	}
 	else
 	{
 		shift_X++;
-		if(shift_X >4){
+		if(shift_X > MAP_SIZE-1){
             return shift_X;       // Daje pozwolenie na rysowanie verticalnej w tym sektorze bo to koniec mapy.
 		};
 
@@ -133,6 +134,8 @@ float Find_Height_Horizontal(Point& B, float shift_X, int moveX, int moveY)
 	}
 
 }
+
+
 
 
 

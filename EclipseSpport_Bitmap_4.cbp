@@ -17,11 +17,11 @@
 				<Linker>
 					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libfreetype.a" />
 					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libopenal32.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-audio-s-d.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-graphics-s-d.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-network-s-d.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-system-s-d.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-window-s-d.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-audio-d.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-graphics-d.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-network-d.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-system-d.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-window-d.a" />
 				</Linker>
 			</Target>
 			<Target title="Release">
@@ -36,11 +36,11 @@
 					<Add option="-s" />
 					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libfreetype.a" />
 					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libopenal32.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-audio-s.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-graphics-s.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-network-s.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-system-s.a" />
-					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-window-s.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-audio.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-graphics.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-network.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-system.a" />
+					<Add library="C:/Users/Maciek/Desktop/RX/C++/Biblioteka_SFML/SFML-2.5.1-windows-gcc-5.1.0-tdm-32-bit/SFML-2.5.1/lib/libsfml-window.a" />
 				</Linker>
 			</Target>
 		</Build>

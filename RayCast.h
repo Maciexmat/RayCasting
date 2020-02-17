@@ -16,19 +16,22 @@
 #define STOP 410        // 448
 #define ANGLE_div 500   // 500 to jest Pi -> 180st
 #define WALL_SIZE 2000  // wysokosc sciany dzielona przez odleglosc
-#define MOVE_X 2
-#define MOVE_Y 3
+#define MAP_SIZE 7      // Mapa 5x5
+
+int const WIDTH = 1200;
+int const HEIGHT = 600;
+
 
 
 // Point on the border of sectors:
 class Point
 {
 public:
-	Point(float a, float b, float c) : x(a), y(b), alfa(c)	{};
+	Point(float a, float b) : x(a), y(b){};
 
     float x;
     float y;
-    float alfa;
+    float alfa = 0;
     float d = 0;
     float h = 0;    // wysokosc trojkata
     float n = 0;    // podstawa trojkata (odleglosc do najblizszej pionowej)
@@ -45,6 +48,7 @@ void Set_Horizontal(Point *X, int yShift, int move_X, int moveY);               
 void Show_basic_map(int size_x, int size_y);
 float Find_Height_Vertical(Point& A, float shift_Y, int moveX, int moveY);
 float Find_Height_Horizontal(Point& B, float shift_X, int moveX, int moveY);
+
 
 
 
